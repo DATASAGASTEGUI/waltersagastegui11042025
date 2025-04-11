@@ -3,8 +3,14 @@
 int main() {
 	float nota;
 	
-	printf("Ingresar su nota? ");
-	scanf("%f", &nota);
+	do {
+       printf("Ingresar su nota? ");
+	   scanf("%f", &nota);	
+	   
+	   if(!(nota >= 0 && nota <= 10)) {
+		  printf("Nota no valida. Vuelva a ingresar nota\n");
+	   }
+	}while(!(nota >= 0 && nota <= 10));
 	
 	if(nota >= 0 && nota < 5) {
 	   printf("Desaprobado\n");
@@ -14,9 +20,7 @@ int main() {
 	   printf("Notable\n");
 	} else if(nota >= 9 && nota < 10) {
 	   printf("Sobresaliente\n");
-	} else {
-	   printf("Nota no valida\n");
-	}
+	} 
 	
 	
 	return 0;
